@@ -81,9 +81,9 @@ const StockTrackingPage: React.FC = () => {
   });
 
   return (
-    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
+    <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10 p-2">
+      <div className="mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md p-2 rounded-xl">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className)}>Tracking Management</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Monitor inbound and outbound inventory movements</p>
       </div>
@@ -94,7 +94,7 @@ const StockTrackingPage: React.FC = () => {
           <input
             type="text"
             placeholder="Search by Tracking #, Order ID..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -103,7 +103,7 @@ const StockTrackingPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm"
+              className="appearance-none bg-white dark:bg-[#1a1a1a] text-sm border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm"
               value={filterShipmentStatus}
               onChange={handleShipmentStatusChange}
             >
@@ -118,7 +118,7 @@ const StockTrackingPage: React.FC = () => {
           </div>
           <button
             onClick={handleInitiateNewShipment}
-            className="bg-[#b16a04] text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm"
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white text-sm flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm"
           >
             <Truck size={18} className="mr-1.5" />
             Initiate New Shipment
@@ -134,9 +134,9 @@ const StockTrackingPage: React.FC = () => {
       </div>
 
       {/* Live Shipment Status Table */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
         <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Live Shipment Status</h2>
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 rounded-xl">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Tracking Number</th>
@@ -175,7 +175,7 @@ const StockTrackingPage: React.FC = () => {
       {/* Bottom Row (Charts) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {/* Shipment Status Distribution Chart */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
           <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Shipment Status Distribution</h2>
           <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Breakdown of shipments by their current status.</p>
           <div className="h-64 flex flex-col md:flex-row items-center justify-center">
@@ -199,7 +199,7 @@ const StockTrackingPage: React.FC = () => {
         </div>
 
         {/* Average Delivery Time Trend Chart */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
           <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Average Delivery Time (Days)</h2>
           <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Trend of average delivery times over months.</p>
           <div className="h-64">
@@ -209,9 +209,9 @@ const StockTrackingPage: React.FC = () => {
       </div>
 
       {/* Recent Deliveries/Received Items Table */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 overflow-x-auto">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 overflow-x-auto">
         <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Recent Deliveries & Receipts</h2>
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 rounded-xl">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Date</th>
