@@ -147,7 +147,7 @@ const HROnboardOffboardPage: React.FC = () => {
           </div>
           <button
             onClick={handleInitiateOnboarding}
-            className="bg-[#f5793b] text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm"
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm"
           >
             <UserPlus size={18} className="mr-1.5" />
             Initiate Onboarding
