@@ -60,7 +60,7 @@ const WarehouseManagementPage: React.FC = () => {
       </div>
 
       {/* Filter/Search Bar */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
+      <div className="flex flex-col sm:flex-row gap-4 mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md shadow-lg p-6 border border-gray-200 dark:border-zinc-900 ">
         <div className="relative flex-1">
           <input
             type="text"
