@@ -137,7 +137,7 @@ const StockTrackingPage: React.FC = () => {
       <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
         <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Live Shipment Status</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 rounded-xl">
-          <thead className="bg-gray-50 dark:bg-gray-700">
+          <thead className="">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Tracking Number</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Origin</th>
@@ -147,7 +147,7 @@ const StockTrackingPage: React.FC = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Last Update</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-[#1a1a1a] divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredLiveShipments.length > 0 ? (
               filteredLiveShipments.map((shipment) => (
                 <tr key={shipment.id}>
@@ -212,7 +212,7 @@ const StockTrackingPage: React.FC = () => {
       <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 overflow-x-auto">
         <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Recent Deliveries & Receipts</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 rounded-xl">
-          <thead className="bg-gray-50 dark:bg-gray-700">
+          <thead className="">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Date</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Tracking Number</th>
@@ -221,7 +221,7 @@ const StockTrackingPage: React.FC = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Status</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-[#1a1a1a] divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {recentDeliveriesData.length > 0 ? (
               recentDeliveriesData.map((delivery) => (
                 <tr key={delivery.id}>
