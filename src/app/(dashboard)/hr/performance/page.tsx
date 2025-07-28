@@ -72,18 +72,18 @@ const EmployeePerformancePage: React.FC = () => {
   return (
     <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10">
+      <div className="mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md p-2 rounded-xl">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className)}>Employee Performance</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Monitor performance, manage reviews, and track goals</p>
       </div>
 
       {/* Filter/Search Bar & Action Button */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="relative flex-1 w-full md:w-auto">
           <input
             type="text"
             placeholder="Search employees..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -92,7 +92,7 @@ const EmployeePerformancePage: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-xs"
+              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm"
               value={filterDepartment}
               onChange={handleDepartmentChange}
             >
@@ -104,7 +104,7 @@ const EmployeePerformancePage: React.FC = () => {
           </div>
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-xs"
+              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm"
               value={filterReviewStatus}
               onChange={handleReviewStatusChange}
             >
@@ -117,7 +117,7 @@ const EmployeePerformancePage: React.FC = () => {
           </div>
           <button
             onClick={handleInitiateReviewCycle}
-            className="bg-[#b16a04] text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs"
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm"
           >
             <Sparkles size={18} className="mr-1.5" />
             Initiate Review Cycle
@@ -133,10 +133,10 @@ const EmployeePerformancePage: React.FC = () => {
       </div>
 
       {/* Employee Performance Overview Table */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
         <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Employee Performance Overview</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-700">
+          <thead className="">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Employee Name</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Department</th>
@@ -146,7 +146,7 @@ const EmployeePerformancePage: React.FC = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Next Review Due</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-[#1a1a1a] divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredEmployeePerformance.length > 0 ? (
               filteredEmployeePerformance.map((employee) => (
                 <tr key={employee.id}>
@@ -178,9 +178,9 @@ const EmployeePerformancePage: React.FC = () => {
       {/* Bottom Row (Performance Review Progress & Performance Score Distribution) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Performance Review Progress Section */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Performance Review Progress</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Overview of the current review cycle.</p>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Performance Review Progress</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Overview of the current review cycle.</p>
           <div className="space-y-4">
             <div>
               <div className="flex justify-between items-center text-zinc-900 dark:text-white text-xs mb-1">
@@ -222,9 +222,9 @@ const EmployeePerformancePage: React.FC = () => {
         </div>
 
         {/* Performance Score Distribution Chart */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Performance Score Distribution</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Breakdown of employee performance scores.</p>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Performance Score Distribution</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Breakdown of employee performance scores.</p>
           <div className="h-64">
             <Bar data={scoreDistributionData} />
             {/* options={getBarChartOptions(document.documentElement.classList.contains('dark'))}  */}
