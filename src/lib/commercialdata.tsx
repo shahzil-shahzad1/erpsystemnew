@@ -418,7 +418,7 @@ export const purchaseTrendData = {
       label: 'Monthly Spend ($)',
       data: [15000, 18000, 12000, 20000, 25000, 22000, 28000],
       fill: false,
-      borderColor: 'rgb(75, 192, 192)',
+      borderColor: '#f5793b',
       tension: 0.1,
     },
   ],
