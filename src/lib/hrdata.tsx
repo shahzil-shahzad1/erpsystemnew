@@ -67,7 +67,7 @@ export const pendingLeaveRequests: PendingLeaveRequest[] = [
 export const monthlyAttendanceTrend = {
   labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
   datasets: [
-    { label: 'Avg. Attendance Rate (%)', data: [90, 91, 93, 92, 94, 92.5], fill: false, borderColor: 'rgb(75, 192, 192)', tension: 0.1 },
+    { label: 'Avg. Attendance Rate (%)', data: [90, 91, 93, 92, 94, 92.5], fill: false, borderColor: '#f5793b', tension: 0.1 },
   ],
 };
 
