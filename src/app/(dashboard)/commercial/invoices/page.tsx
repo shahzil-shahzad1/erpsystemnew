@@ -66,15 +66,15 @@ const InvoicesPage: React.FC = () => {
   });
 
   return (
-    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
+    <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10">
+      <div className="mb-8 p-2 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100",pacifico.className) }>Invoices</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Manage incoming and outgoing financial documents</p>
       </div>
 
       {/* Filter/Search Bar & Action Buttons */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="relative flex-1 w-full md:w-auto">
           <input
             type="text"
@@ -115,14 +115,14 @@ const InvoicesPage: React.FC = () => {
           </div>
           <button
             onClick={handleCreateNewInvoice}
-            className="bg-[#b16a04] text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs" // Reduced padding and font size
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs" // Reduced padding and font size
           >
             <FilePlus size={18} className="mr-1.5" /> {/* Adjusted icon size and margin */}
             Create Invoice
           </button>
           <button
             onClick={handleUploadInvoice}
-            className="bg-[#b16a04] text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs" // Reduced padding and font size
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs" // Reduced padding and font size
           >
             <Upload size={18} className="mr-1.5" /> {/* Adjusted icon size and margin */}
             Upload Invoice
@@ -138,8 +138,8 @@ const InvoicesPage: React.FC = () => {
       </div>
 
       {/* All Invoices Table */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
-        <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">All Invoices</h2>
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
+        <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">All Invoices</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
@@ -186,8 +186,8 @@ const InvoicesPage: React.FC = () => {
       {/* Bottom Row (Charts) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Invoice Status Breakdown Chart (Pie Chart) */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Invoice Status Breakdown</h2>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Invoice Status Breakdown</h2>
           <div className="h-64">
             <Pie data={invoiceStatusData}  />
             {/* options={getPieChartOptions(document.documentElement.classList.contains('dark'))} */}
@@ -195,7 +195,7 @@ const InvoicesPage: React.FC = () => {
         </div>
 
         {/* Revenue Trend Chart (Line Chart) */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
           <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Monthly Revenue Trend</h2>
           <div className="h-64">
             <Line data={revenueTrendData} />
