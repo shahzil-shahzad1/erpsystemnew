@@ -42,17 +42,17 @@ const StockInventoryPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
+    <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-        <div className="text-center md:text-left bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
+        <div className="text-center md:text-left">
           <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className)}>Stock Inventory</h1>
           <p className="text-zinc-800 dark:text-zinc-200 text-xs">Monitor inventory levels and warehouse management</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20">
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
+              className="appearance-none bg-white text-sm dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
@@ -64,7 +64,7 @@ const StockInventoryPage = () => {
             </select>
             <ChevronDown size={18} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none" />
           </div>
-          <button className="bg-[#b16a04] text-white flex items-center justify-center py-2 px-4 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200">
+          <button className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex text-sm items-center justify-center py-2 px-4 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200">
             <Download size={18} className="mr-2" />
             Stock Report
           </button>
@@ -81,8 +81,8 @@ const StockInventoryPage = () => {
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Inventory Trend Chart */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Inventory Trend</h2>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Inventory Trend</h2>
           <div className="h-64">
             {/* Pass the dynamic options to the Line chart */}
             <Line data={inventoryTrendData}  />
@@ -91,8 +91,8 @@ const StockInventoryPage = () => {
         </div>
 
         {/* Category Distribution Chart */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Category Distribution</h2>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Category Distribution</h2>
           <div className="h-64 flex flex-col md:flex-row items-center justify-center">
             <div className="w-full md:w-1/2 h-full">
               {/* Pass the dynamic options to the Pie chart */}
