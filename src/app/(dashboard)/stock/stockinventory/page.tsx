@@ -44,12 +44,12 @@ const StockInventoryPage = () => {
   return (
     <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 inset-0 p-2 rounded-xl bg-white/90 dark:bg-black/80 backdrop-blur-md">
         <div className="text-center md:text-left">
           <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className)}>Stock Inventory</h1>
           <p className="text-zinc-800 dark:text-zinc-200 text-xs">Monitor inventory levels and warehouse management</p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20">
+        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
           <div className="relative w-full sm:w-auto">
             <select
               className="appearance-none bg-white text-sm dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
