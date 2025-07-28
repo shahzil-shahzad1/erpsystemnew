@@ -21,7 +21,7 @@ const LowStockAlertItem: React.FC<LowStockItem> = ({ product, category, current,
           <p className="text-xs text-gray-500 dark:text-gray-400">Current: {current} Min: {min}</p>
         </div>
       </div>
-      <button className="bg-[#b16a04] text-white py-1 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 text-sm">
+      <button className="bg-[#f5793b] text-white py-1 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 text-sm">
         Reorder
       </button>
     </div>
