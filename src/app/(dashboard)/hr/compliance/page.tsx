@@ -80,20 +80,20 @@ const HRCompliancePage: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
+    <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10">
+      <div className="mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md p-2 rounded-xl">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className)}>HR Compliance</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Ensure regulatory adherence, certifications, and policy acknowledgments</p>
       </div>
 
       {/* Filter/Search Bar & Action Button */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="relative flex-1 w-full md:w-auto">
           <input
             type="text"
             placeholder="Search employees or compliance items..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-[#1a1a1a] text-sm border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -102,7 +102,7 @@ const HRCompliancePage: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-xs"
+              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm"
               value={filterComplianceStatus}
               onChange={handleComplianceStatusChange}
             >
@@ -116,7 +116,7 @@ const HRCompliancePage: React.FC = () => {
           </div>
           <button
             onClick={handleUploadPolicyDocument}
-            className="bg-[#b16a04] text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs"
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm"
           >
             <Upload size={18} className="mr-1.5" />
             Upload Policy Document
@@ -132,10 +132,10 @@ const HRCompliancePage: React.FC = () => {
       </div>
 
       {/* Employee Compliance Status Table */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
-        <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Employee Compliance Status</h2>
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
+        <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Employee Compliance Status</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-700">
+          <thead className="">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Employee Name</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Department</th>
@@ -144,7 +144,7 @@ const HRCompliancePage: React.FC = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Code of Conduct</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-[#1a1a1a] divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredEmployeeCompliance.length > 0 ? (
               filteredEmployeeCompliance.map((employee) => (
                 <tr key={employee.id}>
@@ -179,9 +179,9 @@ const HRCompliancePage: React.FC = () => {
       {/* Bottom Row (Certifications/Training Expiry Alerts & Policy Acknowledgment Status) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Certifications/Training Expiry Alerts Section */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Certifications & Training Expiry Alerts</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Upcoming deadlines for certifications and training.</p>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Certifications & Training Expiry Alerts</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Upcoming deadlines for certifications and training.</p>
           {expiryAlertsData.length > 0 ? (
             expiryAlertsData.map((alert, index) => (
               <div key={index} className="flex items-center justify-between mb-3 last:mb-0 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150">
@@ -200,9 +200,9 @@ const HRCompliancePage: React.FC = () => {
         </div>
 
         {/* Policy Acknowledgment Status Section */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Policy Acknowledgment Status</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Overview of policy acknowledgment rates.</p>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Policy Acknowledgment Status</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Overview of policy acknowledgment rates.</p>
           {policyAcknowledgmentStatus.length > 0 ? (
             policyAcknowledgmentStatus.map((policy, index) => (
               <div key={index} className="mb-4 last:mb-0">
@@ -219,7 +219,7 @@ const HRCompliancePage: React.FC = () => {
               </div>
             ))
           ) : (
-            <p className="text-gray-500 dark:text-gray-400 text-xs">No policies to display.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">No policies to display.</p>
           )}
         </div>
       </div>
