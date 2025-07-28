@@ -37,9 +37,9 @@ import { recentHiresData } from '@/lib/hrdata';
 const EmployeeManagementPage: React.FC = () => {
   
   return (
-    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
+    <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8">
+      <div className="mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md p-2 rounded-xl">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className)}>Employee Information</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Manage employee data and organizational insights</p>
       </div>
@@ -65,11 +65,11 @@ const EmployeeManagementPage: React.FC = () => {
       {/* This grid ensures parallel display on desktop (lg:grid-cols-2) and stacking on mobile (grid-cols-1) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8"> {/* Added mb-8 for spacing */}
         {/* Department Distribution Chart */}
-        <div className="bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
           {/* bg-gradient-to-b from-zinc-100 to-white dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 */}
 
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Department Distribution</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Employee count by department</p>
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Department Distribution</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Employee count by department</p>
           <div className="h-64">
             <Bar data={departmentDistributionData} />
              {/* options={getBarChartOptions(document.documentElement.classList.contains('dark'))} */}
@@ -77,9 +77,9 @@ const EmployeeManagementPage: React.FC = () => {
         </div>
 
         {/* Employee Growth Chart */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Employee Growth</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Hiring trends and total headcount</p>
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Employee Growth</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Hiring trends and total headcount</p>
           <div className="h-64">
             <Line data={employeeGrowthData} />
             {/* options={getChartOptions(document.documentElement.classList.contains('dark'))} */}
@@ -91,12 +91,12 @@ const EmployeeManagementPage: React.FC = () => {
       {/* This grid ensures parallel display on desktop (lg:grid-cols-2) and stacking on mobile (grid-cols-1) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Skill Distribution Section */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white flex items-center">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white flex items-center">
             <Award size={18} className="mr-2 text-orange-600 dark:text-orange-400" />
             Skill Distribution
           </h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Employee skill breakdown</p>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Employee skill breakdown</p>
           <div className="h-64 flex flex-col md:flex-row items-center justify-center">
             <div className="w-full md:w-1/2 h-full">
               <Pie data={skillDistributionData} />
@@ -119,12 +119,12 @@ const EmployeeManagementPage: React.FC = () => {
         </div>
 
         {/* Recent Hires Section */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white flex items-center">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white flex items-center">
             <UserPlus size={18} className="mr-2 text-orange-600 dark:text-orange-400" />
             Recent Hires
           </h2>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Latest additions to the team</p>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Latest additions to the team</p>
           {recentHiresData.map((hire, index) => (
             <div key={index} className="flex items-center justify-between mb-3 last:mb-0">
               <div className="flex items-center">
