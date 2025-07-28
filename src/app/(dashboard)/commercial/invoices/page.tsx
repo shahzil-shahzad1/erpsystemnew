@@ -68,7 +68,7 @@ const InvoicesPage: React.FC = () => {
   return (
     <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 p-2 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
+      <div className="mb-8 p-2 rounded-xl inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100",pacifico.className) }>Invoices</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Manage incoming and outgoing financial documents</p>
       </div>
@@ -122,7 +122,7 @@ const InvoicesPage: React.FC = () => {
           </button>
           <button
             onClick={handleUploadInvoice}
-            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs" // Reduced padding and font size
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm" // Reduced padding and font size
           >
             <Upload size={18} className="mr-1.5" /> {/* Adjusted icon size and margin */}
             Upload Invoice
@@ -141,7 +141,7 @@ const InvoicesPage: React.FC = () => {
       <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
         <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">All Invoices</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-700">
+          <thead className="">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Invoice #</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Type</th>
@@ -152,7 +152,7 @@ const InvoicesPage: React.FC = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Status</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-[#1a1a1a] divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredInvoices.length > 0 ? (
               filteredInvoices.map((invoice) => (
                 <tr key={invoice.id}>
@@ -196,7 +196,7 @@ const InvoicesPage: React.FC = () => {
 
         {/* Revenue Trend Chart (Line Chart) */}
         <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Monthly Revenue Trend</h2>
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Monthly Revenue Trend</h2>
           <div className="h-64">
             <Line data={revenueTrendData} />
              {/* options={getChartOptions(document.documentElement.classList.contains('dark'))} */}
