@@ -68,20 +68,20 @@ const PurchaseManagementPage: React.FC = () => {
   const uniqueSuppliers = ['All Suppliers', ...new Set(purchaseOrdersData.map(order => order.supplier))];
 
   return (
-    <div className="bg-gradient-to-br from-orange-500/[0.02] via-transparent to-blue-500/[0.02] dark:bg-[#121111] min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
+    <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-500/5 dark:from-orange-500/10 dark:via-transparent dark:to-orange-500/10">
-        <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100",              pacifico.className )}>Purchase Management</h1>
+      <div className="mb-8 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
+        <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className )}>Purchase Management</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Oversee procurement processes and supplier interactions</p>
       </div>
 
       {/* Filter/Search Bar and New PO Button */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="relative flex-1 w-full md:w-auto">
           <input
             type="text"
             placeholder="Search PO#, product, or supplier..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -90,7 +90,7 @@ const PurchaseManagementPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
+              className="appearance-none bg-white text-xs dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
               value={filterStatus}
               onChange={handleStatusChange}
             >
@@ -105,7 +105,7 @@ const PurchaseManagementPage: React.FC = () => {
           </div>
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
+              className="appearance-none bg-white text-xs dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-2 px-4 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full"
               value={filterSupplier}
               onChange={handleSupplierChange}
             >
@@ -117,7 +117,7 @@ const PurchaseManagementPage: React.FC = () => {
           </div>
           <button
             onClick={handleNewPurchaseOrder}
-            className="bg-[#b16a04] text-white flex items-center justify-center py-2 px-4 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white text-white text-sm flex items-center justify-center py-2 px-4 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
           >
             <Plus size={18} className="mr-2" />
             New Purchase Order
@@ -133,8 +133,8 @@ const PurchaseManagementPage: React.FC = () => {
       </div>
 
       {/* Recent Purchase Orders / All Purchase Orders Table */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
-        <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Recent Purchase Orders</h2>
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
+        <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Recent Purchase Orders</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
@@ -182,20 +182,20 @@ const PurchaseManagementPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Low Stock / Reorder Needs Section */}
         <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Low Stock / Reorder Needs</h2>
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Low Stock / Reorder Needs</h2>
           <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Summary of critical low stock items requiring attention.</p>
           {lowStockReorderData.length > 0 ? (
             lowStockReorderData.map((item, index) => (
               <LowStockAlertItem key={index} {...item} />
             ))
           ) : (
-            <p className="text-gray-500 dark:text-gray-400 text-xs">No low stock items currently.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">No low stock items currently.</p>
           )}
         </div>
 
         {/* Purchase Trend (Line Chart) */}
         <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
-          <h2 className="text-[10px] font-bold mb-4 text-zinc-900 dark:text-white">Purchase Trend</h2>
+          <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Purchase Trend</h2>
           <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Monthly spend or purchase order count.</p>
           <div className="h-64">
             <Line data={purchaseTrendData} />
