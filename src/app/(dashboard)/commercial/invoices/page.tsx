@@ -79,7 +79,7 @@ const InvoicesPage: React.FC = () => {
           <input
             type="text"
             placeholder="Search invoices..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -88,7 +88,7 @@ const InvoicesPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto"> {/* Reduced gap to 2 */}
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-xs" // Reduced padding and font size
+              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm" // Reduced padding and font size
               value={filterStatus}
               onChange={handleStatusChange}
             >
@@ -102,7 +102,7 @@ const InvoicesPage: React.FC = () => {
           </div>
           <div className="relative w-full sm:w-auto">
             <select
-              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-xs" // Reduced padding and font size
+              className="appearance-none bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-700 text-zinc-900 dark:text-white py-1.5 px-3 pr-8 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e5a004] focus:border-transparent w-full text-sm" // Reduced padding and font size
               value={filterType}
               onChange={handleTypeChange}
             >
@@ -115,7 +115,7 @@ const InvoicesPage: React.FC = () => {
           </div>
           <button
             onClick={handleCreateNewInvoice}
-            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-xs" // Reduced padding and font size
+            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white flex items-center justify-center py-1.5 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap text-sm" // Reduced padding and font size
           >
             <FilePlus size={18} className="mr-1.5" /> {/* Adjusted icon size and margin */}
             Create Invoice
