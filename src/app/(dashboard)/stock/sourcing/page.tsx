@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, ChevronDown, PlusCircle, ShoppingCart, Clock, Truck, Users } from 'lucide-react';
+import { Search, ChevronDown, PlusCircle } from 'lucide-react';
 import { Line, Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Tooltip, Legend } from 'chart.js';
 
