@@ -70,7 +70,7 @@ const PurchaseManagementPage: React.FC = () => {
   return (
     <div className="min-h-screen p-6 sm:p-8 lg:p-10 font-sans text-gray-900 dark:text-white">
       {/* Header Section */}
-      <div className="mb-8 p-3 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md">
+      <div className="mb-8 p-3 inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl">
         <h1 className={cn("text-lg font-bold text-zinc-900 dark:text-zinc-100", pacifico.className )}>Purchase Management</h1>
         <p className="text-zinc-800 dark:text-zinc-200 text-xs">Oversee procurement processes and supplier interactions</p>
       </div>
@@ -117,7 +117,7 @@ const PurchaseManagementPage: React.FC = () => {
           </div>
           <button
             onClick={handleNewPurchaseOrder}
-            className="bg-white/50 dark:bg-gray-800/50 text-black dark:text-white text-sm flex items-center justify-center py-2 px-4 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
+            className="bg-white/50 dark:bg-gray-800/50 text-sm text-black dark:text-white text-sm flex items-center justify-center py-2 px-4 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 w-full sm:w-auto whitespace-nowrap"
           >
             <Plus size={18} className="mr-2" />
             New Purchase Order
@@ -136,7 +136,7 @@ const PurchaseManagementPage: React.FC = () => {
       <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 mb-8 overflow-x-auto">
         <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Recent Purchase Orders</h2>
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-700">
+          <thead className="">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">PO#</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Supplier</th>
@@ -146,7 +146,7 @@ const PurchaseManagementPage: React.FC = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Expected Delivery</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-[#1a1a1a] divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {filteredPurchaseOrders.length > 0 ? (
               filteredPurchaseOrders.map((order) => (
                 <tr key={order.poNum}>
@@ -194,7 +194,7 @@ const PurchaseManagementPage: React.FC = () => {
         </div>
 
         {/* Purchase Trend (Line Chart) */}
-        <div className="bg-gradient-to-b from-zinc-100 to-white dark:from-orange-500/20 dark:via-white/5 dark:to-blue-500/20 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
+        <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900">
           <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Purchase Trend</h2>
           <p className="text-xs text-gray-600 dark:text-gray-300 mb-6">Monthly spend or purchase order count.</p>
           <div className="h-64">
