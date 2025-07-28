@@ -52,7 +52,7 @@ const LowStockAlertItem: React.FC<LowStockAlertItemProps> = ({ product, category
           <p className="text-xs text-gray-500 dark:text-gray-400">Current: {current} Min: {min}</p>
         </div>
       </div>
-      <button className="bg-[#b16a04] text-white py-1 px-3 rounded-lg shadow-md hover:bg-[#e5a004] transition-all duration-200 text-sm">
+      <button className="bg-[#f5793b] text-white py-1 px-3 rounded-lg shadow-md hover:bg-orange-400 transition-all duration-200 text-sm">
         Reorder
       </button>
     </div>
@@ -77,8 +77,8 @@ const WarehouseStockSections: React.FC = () => {
   return (
     <div className="flex flex-wrap lg:flex-nowrap gap-6 mt-8 px-4 sm:px-6 md:px-8 lg:px-0"> {/* Changed to flexbox, added flex-wrap and lg:flex-nowrap */}
       {/* Warehouse Utilization Section */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 w-full md:w-[calc(50%-0.75rem)]"> {/* Adjusted width for flexbox layout */}
-        <h2 className="text-xl font-bold mb-4 text-zinc-900 dark:text-white">Warehouse Utilization</h2>
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 w-full md:w-[calc(50%-0.75rem)]"> {/* Adjusted width for flexbox layout */}
+        <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Warehouse Utilization</h2>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Capacity usage across locations</p>
         {warehouseData.map((data, index) => (
           <WarehouseUtilizationCard key={index} {...data} />
@@ -86,8 +86,8 @@ const WarehouseStockSections: React.FC = () => {
       </div>
 
       {/* Low Stock Alerts Section */}
-      <div className="bg-gradient-to-b from-zinc-100 to-white dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 w-full md:w-[calc(50%-0.75rem)]"> {/* Adjusted width for flexbox layout */}
-        <h2 className="text-xl font-bold mb-4 text-zinc-900 dark:text-white">Low Stock Alerts</h2>
+      <div className="inset-0 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl shadow-lg p-6 border border-gray-200 dark:border-zinc-900 w-full md:w-[calc(50%-0.75rem)]"> {/* Adjusted width for flexbox layout */}
+        <h2 className="text-lg font-bold mb-4 text-zinc-900 dark:text-white">Low Stock Alerts</h2>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">Items requiring immediate attention</p>
         {lowStockData.map((data, index) => (
           <LowStockAlertItem key={index} {...data} />
